@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+  height: 100%
+}
+
+.padding-top {
+  padding-top: 200px;
+}
+
+.flex{
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+  align-items: center;
+}
