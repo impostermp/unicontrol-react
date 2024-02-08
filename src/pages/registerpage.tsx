@@ -5,6 +5,7 @@ import Stack from '@mui/material/Stack';
 import { TextField } from '@mui/material';
 import Button from '@mui/material/Button';
 import {useNavigate} from 'react-router-dom';
+import axios from 'axios'
 // receive prop function that sets user data in App from handlesubmit
 const RegisterPage = () => {
     
@@ -14,19 +15,22 @@ const RegisterPage = () => {
     const [email, setEmail] = useState('');    
     
     const navigate = useNavigate();
-    const handleSubmit = (e: { preventDefault: () => void; }) =>{
+    const handleSubmit = async (e: { preventDefault: () => void; }) =>{
         e.preventDefault();
         // API call, sanitazion
         
-        console.log(username+ ' ' + password)
-        if (password !== confirmPassword){
-            alert('passwords do not match')
-            return
-        }
-        else {
-            // make api call to register user
-            navigate('/home')
-        }
+        await axios.post('http://localhost:5000/register',{
+            username: username,
+            password: password,
+            email: email,
+
+        })
+        .then(function(resp){
+            console.log(resp);
+        })
+        .catch(function(error){
+            console.log(error);
+        })
     }   
     return (
     <div className='padding-top'>

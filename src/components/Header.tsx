@@ -60,7 +60,9 @@ const Header = ({user}) => {
           >
             <Typography sx={{ p: 2 , display: 'flex', flexDirection: 'column'}}>
               <Link sx={{textDecoration: 'none'}} href="/register" color="inherit">Register</Link>
-              {user.username ? <Link sx={{textDecoration: 'none'}} href="/settings" color="inherit">Settings</Link> : null}
+              {/* {user.username ?  */}
+              <Link sx={{textDecoration: 'none'}} href="/settings" color="inherit">Settings</Link> 
+               {/* : null} */}
             </Typography>
         </PopOver>
       </Toolbar>

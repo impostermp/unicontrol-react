@@ -34,10 +34,10 @@ function App() {
       <Router>
       <Header user = {user}/>
         <Routes>  
-          <Route path='/' element={<LoginPage storeUser={storeUser}/>}/>
+          <Route path='/' element={<LoginPage/>}/>
           <Route path='/home' element={<HomePage user = {user}/>}/>
           <Route path='/register' element={<RegisterPage/>}/>
-          <Route path='/settings' element={<SettingsPage user={user} storeUser={storeUser}/>}/>
+          <Route path='/settings' element={<SettingsPage user={user} storeUser/>}/>
         </Routes>
       </Router>
     </div>
